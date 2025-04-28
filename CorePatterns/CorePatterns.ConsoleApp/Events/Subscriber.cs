@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CorePatterns.ConsoleApp.Events
 {
-    internal class Subscriber
+    public class Subscriber
     {
+        public void Subscribe(Notifier notifier)
+        {
+            notifier.OnNotify += (msg) => Console.WriteLine($"Received : {msg}");
+        }
     }
 }

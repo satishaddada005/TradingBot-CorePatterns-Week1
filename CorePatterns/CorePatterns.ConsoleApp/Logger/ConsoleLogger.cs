@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CorePatterns.ConsoleApp.Logger
 {
-    internal class ConsoleLogger
+    public class ConsoleLogger : ILogger
     {
+        public ConsoleLogger() { }
+
+        public void Log(string message) 
+        {
+            Console.WriteLine(message);
+        }
     }
 }

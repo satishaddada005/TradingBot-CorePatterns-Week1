@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace CorePatterns.ConsoleApp.Events
 {
-    internal class Notifier
+    public class Notifier
     {
+        public Notifier() { }
+
+        public event Action<string> OnNotify;
+
+        public void Send(string message)
+        {
+            OnNotify?.Invoke(message);
+        }
+
     }
 }

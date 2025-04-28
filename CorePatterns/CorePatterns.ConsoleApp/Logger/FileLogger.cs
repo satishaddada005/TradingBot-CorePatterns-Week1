@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace CorePatterns.ConsoleApp.Logger
 {
-    internal class FileLogger
+    public class FileLogger : ILogger
     {
+        public string _filePath { get; set; }
+        public FileLogger(string filePath) 
+        {
+            _filePath = filePath;
+        }
+
+        public void Log(string message)
+        {
+            List<string> messageContent = new List<string>();
+            messageContent.Add(message);
+            File.AppendAllLines(_filePath,messageContent);
+        }
     }
 }

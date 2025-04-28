@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace CorePatterns.ConsoleApp.Resources.DBConnections
 {
-    internal class DBConnections : IDisposable
+    public class DBConnections : IDisposable
     {
-        public void Dispose() { }
+        private bool _disposed = false;
+        public void OpenConnection()
+        {
+            Console.WriteLine("Connection opened");
+        }
+
+        public void CloseConnection()
+        {
+            Console.WriteLine("Connection Closed");
+        }
+        public void Dispose() 
+        {
+            if (!_disposed)
+            {
+                CloseConnection();
+                _disposed = true;
+            }
+            
+        }
     }
 }

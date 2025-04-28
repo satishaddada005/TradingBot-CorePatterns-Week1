@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CorePatterns.ConsoleApp.Logger
 {
-    internal interface ILogger
+    public interface ILogger
     {
+        void Log(string message);
     }
 }
