@@ -1,0 +1,1 @@
+# TradingBot-CorePatterns-Week1
